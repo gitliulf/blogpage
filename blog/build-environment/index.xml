@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tbus – build-environment</title>
-    <link>/blog/build-environment/</link>
+    <link>/blogpage/blog/build-environment/</link>
     <description>Recent content in build-environment on Tbus</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/blog/build-environment/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/blogpage/blog/build-environment/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Blog: Hugo构建</title>
-      <link>/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</link>
+      <link>/blogpage/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</link>
       <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</guid>
+      <guid>/blogpage/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</guid>
       <description>
         
         
@@ -83,10 +83,10 @@
     
     <item>
       <title>Blog: typora PicGo</title>
-      <link>/blog/2022/07/20/typora-picgo/</link>
+      <link>/blogpage/blog/2022/07/20/typora-picgo/</link>
       <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2022/07/20/typora-picgo/</guid>
+      <guid>/blogpage/blog/2022/07/20/typora-picgo/</guid>
       <description>
         
         
@@ -119,10 +119,10 @@
     
     <item>
       <title>Blog: qemu-lunchlinux</title>
-      <link>/blog/2022/07/18/qemu-lunchlinux/</link>
+      <link>/blogpage/blog/2022/07/18/qemu-lunchlinux/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2022/07/18/qemu-lunchlinux/</guid>
+      <guid>/blogpage/blog/2022/07/18/qemu-lunchlinux/</guid>
       <description>
         
         

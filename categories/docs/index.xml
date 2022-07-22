@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tbus – docs</title>
-    <link>/categories/docs/</link>
+    <link>/blogpage/categories/docs/</link>
     <description>Recent content in docs on Tbus</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 20 Jul 2022 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="/categories/docs/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/blogpage/categories/docs/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Blog: Hugo构建</title>
-      <link>/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</link>
+      <link>/blogpage/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</link>
       <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</guid>
+      <guid>/blogpage/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</guid>
       <description>
         
         
@@ -84,10 +84,10 @@
     
     <item>
       <title>Blog: typora PicGo</title>
-      <link>/blog/2022/07/20/typora-picgo/</link>
+      <link>/blogpage/blog/2022/07/20/typora-picgo/</link>
       <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2022/07/20/typora-picgo/</guid>
+      <guid>/blogpage/blog/2022/07/20/typora-picgo/</guid>
       <description>
         
         

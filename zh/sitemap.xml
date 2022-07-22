@@ -2,294 +2,294 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/docs/getting-started/</loc>
+    <loc>/blogpage/docs/getting-started/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/getting-started/"
+                href="/blogpage/en/docs/getting-started/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/docs/getting-started/"
+                href="/blogpage/docs/getting-started/"
                 />
   </url><url>
-    <loc>/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</loc>
+    <loc>/blogpage/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/07/20/typora-picgo/</loc>
+    <loc>/blogpage/blog/2022/07/20/typora-picgo/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
   </url><url>
-    <loc>/blog/2022/07/18/qemu-lunchlinux/</loc>
+    <loc>/blogpage/blog/2022/07/18/qemu-lunchlinux/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/news/</loc>
+    <loc>/blogpage/blog/news/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/blog/news/"
+                href="/blogpage/en/blog/news/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/blog/news/"
+                href="/blogpage/blog/news/"
                 />
   </url><url>
-    <loc>/blog/releases/</loc>
+    <loc>/blogpage/blog/releases/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/blog/releases/"
+                href="/blogpage/en/blog/releases/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/blog/releases/"
+                href="/blogpage/blog/releases/"
                 />
   </url><url>
-    <loc>/blog/build-environment/</loc>
+    <loc>/blogpage/blog/build-environment/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
   </url><url>
-    <loc>/docs/</loc>
+    <loc>/blogpage/docs/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/"
+                href="/blogpage/en/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/docs/"
+                href="/blogpage/docs/"
                 />
   </url><url>
-    <loc>/tags/blog/</loc>
+    <loc>/blogpage/tags/blog/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>/blogpage/categories/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/"
+                href="/blogpage/en/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/categories/"
+                href="/blogpage/categories/"
                 />
   </url><url>
-    <loc>/categories/docs/</loc>
+    <loc>/blogpage/categories/docs/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
   </url><url>
-    <loc>/tags/markdown/</loc>
+    <loc>/blogpage/tags/markdown/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>/blogpage/tags/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/"
+                href="/blogpage/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/tags/"
+                href="/blogpage/tags/"
                 />
   </url><url>
-    <loc>/tags/typora/</loc>
+    <loc>/blogpage/tags/typora/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
   </url><url>
-    <loc>/tags/docs/</loc>
+    <loc>/blogpage/tags/docs/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/docs/"
+                href="/blogpage/en/tags/docs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/tags/docs/"
+                href="/blogpage/tags/docs/"
                 />
   </url><url>
-    <loc>/categories/linux/</loc>
+    <loc>/blogpage/categories/linux/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/categories/qemu/</loc>
+    <loc>/blogpage/categories/qemu/</loc>
     <lastmod>2022-07-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/blog/2018/10/06/easy-documentation-with-docsy/</loc>
+    <loc>/blogpage/blog/2018/10/06/easy-documentation-with-docsy/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/blog/2018/10/06/easy-documentation-with-docsy/"
+                href="/blogpage/en/blog/2018/10/06/easy-documentation-with-docsy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/blog/2018/10/06/easy-documentation-with-docsy/"
+                href="/blogpage/blog/2018/10/06/easy-documentation-with-docsy/"
                 />
   </url><url>
-    <loc>/blog/2018/10/06/the-second-blog-post/</loc>
+    <loc>/blogpage/blog/2018/10/06/the-second-blog-post/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/blog/2018/10/06/the-second-blog-post/"
+                href="/blogpage/en/blog/2018/10/06/the-second-blog-post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/blog/2018/10/06/the-second-blog-post/"
+                href="/blogpage/blog/2018/10/06/the-second-blog-post/"
                 />
   </url><url>
-    <loc>/blog/2018/01/04/another-great-release/</loc>
+    <loc>/blogpage/blog/2018/01/04/another-great-release/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/blog/2018/01/04/another-great-release/"
+                href="/blogpage/en/blog/2018/01/04/another-great-release/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/blog/2018/01/04/another-great-release/"
+                href="/blogpage/blog/2018/01/04/another-great-release/"
                 />
   </url><url>
-    <loc>/docs/getting-started/example-page/</loc>
+    <loc>/blogpage/docs/getting-started/example-page/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/getting-started/example-page/"
+                href="/blogpage/en/docs/getting-started/example-page/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/docs/getting-started/example-page/"
+                href="/blogpage/docs/getting-started/example-page/"
                 />
   </url><url>
-    <loc>/categories/examples/</loc>
+    <loc>/blogpage/categories/examples/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/examples/"
+                href="/blogpage/en/categories/examples/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/categories/examples/"
+                href="/blogpage/categories/examples/"
                 />
   </url><url>
-    <loc>/tags/sample/</loc>
+    <loc>/blogpage/tags/sample/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/sample/"
+                href="/blogpage/en/tags/sample/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/tags/sample/"
+                href="/blogpage/tags/sample/"
                 />
   </url><url>
-    <loc>/tags/test/</loc>
+    <loc>/blogpage/tags/test/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/tags/test/"
+                href="/blogpage/en/tags/test/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/tags/test/"
+                href="/blogpage/tags/test/"
                 />
   </url><url>
-    <loc>/categories/placeholders/</loc>
+    <loc>/blogpage/categories/placeholders/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/categories/placeholders/"
+                href="/blogpage/en/categories/placeholders/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/categories/placeholders/"
+                href="/blogpage/categories/placeholders/"
                 />
   </url><url>
-    <loc>/search/</loc>
+    <loc>/blogpage/search/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/search/"
+                href="/blogpage/en/search/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/search/"
+                href="/blogpage/search/"
                 />
   </url><url>
-    <loc>/</loc>
+    <loc>/blogpage/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/"
+                href="/blogpage/en/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/"
+                href="/blogpage/"
                 />
   </url><url>
-    <loc>/blog/</loc>
+    <loc>/blogpage/blog/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/blog/"
+                href="/blogpage/en/blog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/blog/"
+                href="/blogpage/blog/"
                 />
   </url><url>
-    <loc>/about/</loc>
+    <loc>/blogpage/about/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/about/"
+                href="/blogpage/en/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/about/"
+                href="/blogpage/about/"
                 />
   </url><url>
-    <loc>/community/</loc>
+    <loc>/blogpage/community/</loc>
     <lastmod>2022-07-22T07:50:01+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/community/"
+                href="/blogpage/en/community/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
-                href="/community/"
+                href="/blogpage/community/"
                 />
   </url>
 </urlset>

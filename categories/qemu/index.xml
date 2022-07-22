@@ -1,12 +1,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tbus – qemu</title>
-    <link>/categories/qemu/</link>
+    <link>/blogpage/categories/qemu/</link>
     <description>Recent content in qemu on Tbus</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate>
     
-	  <atom:link href="/categories/qemu/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="/blogpage/categories/qemu/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -16,10 +16,10 @@
     
     <item>
       <title>Blog: qemu-lunchlinux</title>
-      <link>/blog/2022/07/18/qemu-lunchlinux/</link>
+      <link>/blogpage/blog/2022/07/18/qemu-lunchlinux/</link>
       <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
       
-      <guid>/blog/2022/07/18/qemu-lunchlinux/</guid>
+      <guid>/blogpage/blog/2022/07/18/qemu-lunchlinux/</guid>
       <description>
         
         
