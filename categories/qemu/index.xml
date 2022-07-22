@@ -1,0 +1,130 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tbus – qemu</title>
+    <link>/categories/qemu/</link>
+    <description>Recent content in qemu on Tbus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 18 Jul 2022 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="/categories/qemu/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: qemu-lunchlinux</title>
+      <link>/blog/2022/07/18/qemu-lunchlinux/</link>
+      <pubDate>Mon, 18 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/07/18/qemu-lunchlinux/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;版本信息&#34;&gt;版本信息&lt;/h1&gt;
+&lt;p&gt;系统版本：Ubuntu Server 20.04 LTS 64bit
+编译器：9.4.0
+交叉编译器：arm-linux-gnueabi-gcc  (Linaro GCC 7.5-2019.12)  7.5.0
+linux内核：linux-5.15.53
+busybox：1.35.0
+QEMU：7.0.0
+ninja-build：1.10.0&lt;/p&gt;
+&lt;h1 id=&#34;获取交叉编译链&#34;&gt;获取交叉编译链&lt;/h1&gt;
+&lt;p&gt;下载地址：&lt;a href=&#34;https://releases.linaro.org/components/toolchain/binaries/7.5-2019.12/arm-linux-gnueabi/&#34;&gt;Linaro Releases&lt;/a&gt;
+&lt;img src=&#34;C:%5CUsers%5Cliulf%5CDesktop%5C%E5%8D%9A%E5%AE%A2%5Cpictures.assets%5Cimage-20220718155906055.png&#34; alt=&#34;image-20220718155906055&#34;&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar xvf gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi.tar.tar	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#解压&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi ~/.bashrc	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#修改环境变量PATH，让系统先去指定目录寻找交叉编译链的可执行文件&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gitliulf/picture/main/image-20220718160818198.png&#34; alt=&#34;image-20220718160818198&#34;&gt;
+在.bashrc文件加上这行，交叉工具链的目录取决于自己解压的目录
+export PATH=/home/ubuntu/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi/bin:$PATH&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;source&lt;/span&gt; ~/.bashrc	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#让.bashrc生效&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装成功
+&lt;img src=&#34;https://raw.githubusercontent.com/gitliulf/picture/main/image-20220718160830447.png&#34; alt=&#34;image-20220718160830447&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;编译qemu&#34;&gt;编译QEMU&lt;/h1&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo apt-get install ninja-build	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#Need ninja. Ninja is a small build system with a focus on speed. &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget https://download.qemu.org/qemu-7.0.0.tar.xz	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#下载源码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar xvf qemu-7.0.0.tar.xz	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#解压&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir qemu_build &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; qemu_build	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 在下载目录新建文件夹build&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 以下均在/build目录下&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;../qemu-7.0.0/configure
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; make install	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#出去喝杯咖啡，打两把游戏在来看结果&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;编译成功后，qemu-system-arm就生成在当前目录
+和上面一样，将编译出的qemu的可执行文件的目录加入PATH环境变量。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vi ~/.bashrc	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#修改环境变量PATH&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;在.bashrc文件上次修改的基础上，重新修改
+export PATH=/home/ubuntu/qemu_build:/home/ubuntu/gcc-linaro-7.5.0-2019.12-x86_64_arm-linux-gnueabi/bin:$PATH&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;source&lt;/span&gt; ~/.bashrc	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#让.bashrc生效&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;安装成功
+&lt;img src=&#34;https://raw.githubusercontent.com/gitliulf/picture/main/image-20220718160842204.png&#34; alt=&#34;image-20220718160842204&#34;&gt;&lt;/p&gt;
+&lt;h1 id=&#34;编译linux内核&#34;&gt;编译Linux内核&lt;/h1&gt;
+&lt;p&gt;内核代码下载地址：&lt;a href=&#34;https://www.kernel.org/&#34;&gt;The Linux Kernel Archives&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make &lt;span style=&#34;color:#000&#34;&gt;ARCH&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm &lt;span style=&#34;color:#000&#34;&gt;CROSS_COMPILE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm-linux-gnueabi- vexpress_defconfig
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make &lt;span style=&#34;color:#000&#34;&gt;ARCH&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm &lt;span style=&#34;color:#000&#34;&gt;CROSS_COMPILE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm-linux-gnueabi- menuconfig
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make &lt;span style=&#34;color:#000&#34;&gt;ARCH&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm &lt;span style=&#34;color:#000&#34;&gt;CROSS_COMPILE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm-linux-gnueabi- -j2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ps：Versatile Express系统由ARM Ltd提供，作为CortexA9四核处理器的开发环境，硬件由uATX主板和CoreTile Express A9x4子板组成。&lt;/p&gt;
+&lt;h2 id=&#34;验证只启动linux内核&#34;&gt;验证只启动Linux内核&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;qemu-system-arm -M vexpress-a9 -m 128M -kernel ~/linux-5.15.53/arch/arm/boot/zImage -dtb ~/linux-5.15.53/arch/arm/boot/dts/vexpress-v2p-ca9.dtb -nographic
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;ps：内核和设备树的路径每个人可能不一样，需要自己注意下&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gitliulf/picture/main/image-20220718160857131.png&#34; alt=&#34;image-20220718160857131&#34;&gt;
+启动成功，但还没有文件系统，操作系统稍后制作。
+输入ctrl+A+x退出qemu&lt;/p&gt;
+&lt;h1 id=&#34;编译busybox制作文件系统&#34;&gt;编译busybox，制作文件系统&lt;/h1&gt;
+&lt;h2 id=&#34;编译&#34;&gt;编译&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;wget https://busybox.net/downloads/busybox-1.35.0.tar.bz2	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#下载源码&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tar xvf busybox-1.35.0.tar.bz2	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#解压&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; busybox-1.35.0/
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make &lt;span style=&#34;color:#000&#34;&gt;ARCH&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm &lt;span style=&#34;color:#000&#34;&gt;CROSS_COMPILE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm-linux-gnueabi- defconfig
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make &lt;span style=&#34;color:#000&#34;&gt;ARCH&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm &lt;span style=&#34;color:#000&#34;&gt;CROSS_COMPILE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm-linux-gnueabi- menuconfig
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Settings —&amp;gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[*] Build static binary (no shared libs) #使用静态库&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make &lt;span style=&#34;color:#000&#34;&gt;ARCH&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm &lt;span style=&#34;color:#000&#34;&gt;CROSS_COMPILE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm-linux-gnueabi- -j4
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;make &lt;span style=&#34;color:#000&#34;&gt;ARCH&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm &lt;span style=&#34;color:#000&#34;&gt;CROSS_COMPILE&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;arm-linux-gnueabi- install
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;生成结果位于：当前根目录下的_install文件夹下&lt;/li&gt;
+&lt;li&gt;备注：默认安装到根目录下的_install，若想更改，可以通过menuconfig里面的选项更改&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;制作文件系统镜像&#34;&gt;制作文件系统镜像&lt;/h2&gt;
+&lt;h3 id=&#34;根目录构建&#34;&gt;根目录构建&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mkdir -p rootfs/&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;{&lt;/span&gt;dev,etc/init.d,lib,proc,sys&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;}&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#创建根目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cp -raf busybox-1.35.0/_install/* rootfs        &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#拷贝busybox命令到根目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mknod -m &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;666&lt;/span&gt; rootfs/dev/tty1 c &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt; 1			&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#创建4个tty端终设备&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mknod -m &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;666&lt;/span&gt; rootfs/dev/tty1 c &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mknod -m &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;666&lt;/span&gt; rootfs/dev/tty2 c &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mknod -m &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;666&lt;/span&gt; rootfs/dev/tty3 c &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;3&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mknod -m &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;666&lt;/span&gt; rootfs/dev/tty4 c &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mknod -m &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;666&lt;/span&gt; rootfs/dev/console c &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;5&lt;/span&gt; 1		&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#创建console字符设备&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo mknod -m &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;666&lt;/span&gt; rootfs/dev/null c &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; 3			&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#创建null 字符设备&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;vim rootfs/etc/init.d/rcS						&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#输入如下内容&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#!/bin/bash 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;mount -t proc proc /proc 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mount -t sysfs sysfs /sys 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;/sbin/mdev -s 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;echo&lt;/span&gt; /sbin/mdev &amp;gt; /proc/sys/kernel/hotplug      &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#支持热插拔&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo chmod +x rootfs/etc/init.d/rcS
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; rootfs
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;find ./ &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; cpio -o --format&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;newc &amp;gt; ./rootfs.img
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;启动qemu&#34;&gt;启动qemu&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;qemu-system-arm -M vexpress-a9 -m 128M -kernel linux-5.15.53/arch/arm/boot/zImage -dtb linux-5.15.53/arch/arm/boot/dts/vexpress-v2p-ca9.dtb -append &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;root=/dev/ram rdinit=sbin/init console=ttyAMA0&amp;#34;&lt;/span&gt; -nographic -initrd rootfs/rootfs.img
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;启动成功
+&lt;img src=&#34;https://raw.githubusercontent.com/gitliulf/picture/main/image-20220718160906354.png&#34; alt=&#34;image-20220718160906354&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

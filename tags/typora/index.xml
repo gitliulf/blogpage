@@ -1,0 +1,122 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tbus – typora</title>
+    <link>/tags/typora/</link>
+    <description>Recent content in typora on Tbus</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 20 Jul 2022 00:00:00 +0000</lastBuildDate>
+    
+	  <atom:link href="/tags/typora/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Blog: Hugo构建</title>
+      <link>/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/07/20/hugo%E6%9E%84%E5%BB%BA/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;准备工作&#34;&gt;准备工作&lt;/h2&gt;
+&lt;h3 id=&#34;安装go&#34;&gt;安装go&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;下载go &lt;a href=&#34;https://studygolang.com/dl&#34;&gt;https://studygolang.com/dl&lt;/a&gt;
+下载最新的golang版本后安装&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;安装npm&#34;&gt;安装npm&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;http://nodejs.cn/download/&#34;&gt;http://nodejs.cn/download/&lt;/a&gt;
+下载nodejs安装后会有npm命令&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;安装hugo&#34;&gt;安装hugo&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/gohugoio/hugo/releases/tag/v0.101.0&#34;&gt;https://github.com/gohugoio/hugo/releases/tag/v0.101.0&lt;/a&gt;
+&lt;a href=&#34;https://github.com/gohugoio/hugo/releases/download/v0.101.0/hugo_extended_0.101.0_Windows-64bit.zip&#34;&gt;https://github.com/gohugoio/hugo/releases/download/v0.101.0/hugo_extended_0.101.0_Windows-64bit.zip&lt;/a&gt;
+下载带extended的最新版本并安装&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;clone-博客仓库&#34;&gt;Clone 博客仓库&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;将博客clone到本地
+尽量使用ssh地址
+并再github上配置好公钥&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone git@github.com:TbusOS/tbusos.github.io.git
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;构建&#34;&gt;构建&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install 	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#下载 主题中的依赖&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo mod graph 	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# 下载hugo需要go依赖&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#第一次构建以上两步可能时间比较久，后续不用执行这两个步骤&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo server 
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;执行可以在本地 &lt;a href=&#34;http://127.0.0.1:1313&#34;&gt;http://127.0.0.1:1313&lt;/a&gt; 预览博客&lt;/p&gt;
+&lt;h2 id=&#34;试着提交&#34;&gt;试着提交&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在目录 content/alpha/blog/environment-build 下按照已经有的文档写一篇文档&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;重新执行hugo server 可以完成构建&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;再次访问&lt;a href=&#34;http://127.0.0.1:1313&#34;&gt;http://127.0.0.1:1313&lt;/a&gt; 预览自己的文章&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#执行hugo 可以完成构建，在docs目录下是要提交的文件，content目录是文章的目录需要一并提交&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git add . &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#添加到提交目录&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git push **** &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#push到github&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;hr&gt;
+&lt;p&gt;至此完成一个完整的博客提交流程&lt;/p&gt;
+&lt;h2 id=&#34;注意事项&#34;&gt;注意事项&lt;/h2&gt;
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;注意事项!&lt;/h4&gt;
+
+    构建的时候发现有时候docs目录没有及时更新，提交之前建议手动删除docs再重新构建
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Blog: typora PicGo</title>
+      <link>/blog/2022/07/20/typora-picgo/</link>
+      <pubDate>Wed, 20 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/2022/07/20/typora-picgo/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;1-typora-设置&#34;&gt;1. Typora 设置&lt;/h2&gt;
+&lt;p&gt;设置完成后点击下载PicGo下载PicGo&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/gitliulf/picture/main/1658280424709.png&#34; alt=&#34;1658280424709&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2-picgo设置&#34;&gt;2. PicGo设置&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;安装github-plus插件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TbusOS/TbusBlogDoc/master/blog/pictures.assets/1658283204030.png&#34; alt=&#34;1658283204030&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;去github创建一个Token用于上传图片使用，这一步一定要记下token最好存在&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TbusOS/TbusBlogDoc/master/blog/pictures.assets/1658283319167.png&#34; alt=&#34;1658283319167&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建Token至少选择以下权限&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TbusOS/TbusBlogDoc/master/blog/pictures.assets/1658283463904.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;然后再回到PicGo进行一下设置一下&lt;/li&gt;
+&lt;li&gt;设置完以后可以在上传区上传一个图片测试&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TbusOS/TbusBlogDoc/master/blog/pictures.assets/1658283059013.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;在typora中添加图片将自动上传到github&#34;&gt;在Typora中添加图片将自动上传到github&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;https://raw.githubusercontent.com/TbusOS/TbusBlogDoc/master/blog/pictures.assets/1658283928561.png&#34; alt=&#34;1658283928561&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
